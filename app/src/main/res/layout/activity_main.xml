@@ -38,6 +38,7 @@
                 android:ems="10"
                 android:hint="Username"
                 android:inputType="textPersonName"
+                android:drawableLeft="@drawable/ic_person_outline_red_400_24dp"
                 android:maxLines="1"
                 android:textColorHint="#696969"
                 tools:layout_editor_absoluteY="156dp"
@@ -57,6 +58,7 @@
                 android:drawablePadding="12dp"
                 android:ems="10"
                 android:hint="Password"
+                android:drawableLeft="@drawable/ic_lock_red_400_24dp"
                 android:inputType="textPassword"
                 android:maxLines="1"
                 android:textColorHint="#696969" />
