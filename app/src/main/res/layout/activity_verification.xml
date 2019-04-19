@@ -31,20 +31,20 @@
                 android:id="@+id/etUsername"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:maxLines="1"
                 android:elevation="0dp"
                 android:ems="10"
                 android:hint="Username"
-                android:inputType="textPersonName"/>
+                android:inputType="textPersonName"
+                android:maxLines="1" />
 
             <EditText
                 android:id="@+id/etVerificationCode"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:maxLines="1"
                 android:ems="10"
                 android:hint="Verification Code"
-                android:inputType="textPersonName"/>
+                android:inputType="textPersonName"
+                android:maxLines="1" />
 
             <Button
                 android:id="@+id/bVerification"
@@ -52,11 +52,12 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/background_login"
                 android:clickable="true"
+                android:maxLines="1"
                 android:padding="16dp"
+                android:text="Verify"
                 android:textAllCaps="false"
                 android:textColor="#79A78C"
-                android:maxLines="1"
-                android:text="Verify" />
+                android:textSize="18sp" />
 
         </LinearLayout>
     </ScrollView>

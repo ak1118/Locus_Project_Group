@@ -55,10 +55,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@android:color/transparent"
-                android:drawablePadding="12dp"
+                android:drawableLeft="@drawable/ic_lock_red_400_24dp"
                 android:ems="10"
                 android:hint="Password"
-                android:drawableLeft="@drawable/ic_lock_red_400_24dp"
                 android:inputType="textPassword"
                 android:maxLines="1"
                 android:textColorHint="#696969" />
@@ -78,17 +77,36 @@
                 android:padding="16dp"
                 android:text="Log In"
                 android:textAllCaps="false"
-                android:textColor="#79A78C" />
+                android:textColor="#79A78C"
+                android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/tvRegister"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            <RelativeLayout
                 android:layout_marginTop="16dp"
-                android:text="Sign Up for Locus"
-                android:textColor="#696969" />
+                android:orientation="horizontal"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true">
 
+                <TextView
+                    android:id="@+id/tvRegister"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sign Up for Locus"
+                    android:layout_alignParentLeft="true"
+                    android:textColor="#696969"
+                    android:textSize="18sp" />
 
+                <TextView
+                    android:id="@+id/tvHelp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Need Help?"
+                    android:textColor="#696969"
+                    android:layout_alignParentRight="true"
+                    android:textSize="18sp" />
+
+            </RelativeLayout>
         </LinearLayout>
     </ScrollView>
 
