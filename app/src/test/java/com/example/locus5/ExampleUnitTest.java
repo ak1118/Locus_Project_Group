@@ -1,4 +1,4 @@
-package com.example.locus;
+package com.example.locus5;
 
 import org.junit.Test;
 

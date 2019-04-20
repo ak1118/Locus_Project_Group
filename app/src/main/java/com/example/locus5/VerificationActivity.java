@@ -1,14 +1,12 @@
-package com.example.locus;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.locus5;
 
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUser;
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUserPool;
@@ -59,4 +57,3 @@ public class VerificationActivity extends AppCompatActivity {
 
     }
 }
-

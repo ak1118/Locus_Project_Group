@@ -1,4 +1,4 @@
-package com.example.locus;
+package com.example.locus5;
 
 import android.content.Context;
 
@@ -6,11 +6,10 @@ import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUserPool;
 import com.amazonaws.regions.Regions;
 
 public class CognitoSettings {
-    private String userPoolID = "us-east-1_YOX8C9E5w";
-    private String clientID = "2g18j1f1cgelgrheqnd430lf4d";
-    private String clientSecret = "k7utcqiok9pqti6kqe9grfvki2q4nt7ivdu6kjsrh5l332f3arb";
+    private String userPoolID = "us-east-1_ur6bokDS4";
+    private String clientID = "1kk0u963edapah0fd8q684su82";
+    private String clientSecret = "14mjrk37k2vv3lid6jgrvb2gcpgu077jqm3lmq31is5tu7hsk2s8";
     private Regions cognitoRegion = Regions.US_EAST_1;
-
     private Context context;
 
     public CognitoSettings(Context context){
@@ -31,6 +30,4 @@ public class CognitoSettings {
     public CognitoUserPool getUserPool(){
         return new CognitoUserPool(context, userPoolID, clientID, clientSecret, cognitoRegion);
     }
-
-
 }

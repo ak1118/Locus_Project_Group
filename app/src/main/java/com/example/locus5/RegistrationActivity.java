@@ -1,35 +1,25 @@
-package com.example.locus;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.locus5;
 
 import android.content.Intent;
-import android.nfc.Tag;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.amazonaws.mobile.client.AWSMobileClient;
-import com.amazonaws.mobile.client.Callback;
-import com.amazonaws.mobile.client.results.UserCodeDeliveryDetails;
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUser;
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUserAttributes;
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUserCodeDeliveryDetails;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUserPool;
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.handlers.SignUpHandler;
-import com.amazonaws.services.cognitoidentityprovider.model.SignUpResult;
 
-import java.util.HashMap;
-import java.util.Map;
-
-public class RegisterActivity extends AppCompatActivity {
+public class RegistrationActivity extends AppCompatActivity {
 
     private static final String TAG = "RegisterActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.activity_registration);
 
         final EditText etName = (EditText) findViewById(R.id.etName);
         final EditText etUsername = (EditText) findViewById(R.id.etUsername);
@@ -38,14 +28,14 @@ public class RegisterActivity extends AppCompatActivity {
 
         final CognitoUserAttributes userAttributes = new CognitoUserAttributes();
 
-        final SignUpHandler signupCallback = new SignUpHandler() {
+        final SignUpHandler signUpCallback = new SignUpHandler() {
             @Override
             public void onSuccess(CognitoUser user, boolean signUpConfirmationState, CognitoUserCodeDeliveryDetails cognitoUserCodeDeliveryDetails) {
                 Log.i(TAG, "sign up successful: " + signUpConfirmationState);
                 if (!signUpConfirmationState){
                     Log.i(TAG, "sign up successful but not confirmed, verification code sent to: " + cognitoUserCodeDeliveryDetails.getDestination());
-                    Intent verifyIntent = new Intent(RegisterActivity.this, VerificationActivity.class);
-                    RegisterActivity.this.startActivity(verifyIntent);
+                    Intent verifyIntent = new Intent(RegistrationActivity.this, VerificationActivity.class);
+                    RegistrationActivity.this.startActivity(verifyIntent);
                 }
                 else {
                     Log.i(TAG, "sign up successful");
@@ -54,7 +44,10 @@ public class RegisterActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Exception exception) {
+                Intent verifyIntent = new Intent(RegistrationActivity.this, VerificationActivity.class);
+                RegistrationActivity.this.startActivity(verifyIntent);
                 Log.i(TAG, "sign up failure:" + exception.getLocalizedMessage());
+
             }
         };
 
@@ -62,11 +55,12 @@ public class RegisterActivity extends AppCompatActivity {
         bRegister.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+
                 userAttributes.addAttribute("given_name", String.valueOf(etName.getText()));
                 userAttributes.addAttribute("email", String.valueOf(etEmail.getText()));
 
-                CognitoSettings cognitoSettings = new CognitoSettings(RegisterActivity.this);
-                cognitoSettings.getUserPool().signUpInBackground(String.valueOf(etUsername.getText()), String.valueOf(etPassword.getText()), userAttributes,null, signupCallback);
+                CognitoSettings cognitoSettings = new CognitoSettings(RegistrationActivity.this);
+                cognitoSettings.getUserPool().signUpInBackground(String.valueOf(etUsername.getText()), String.valueOf(etPassword.getText()), userAttributes,null, signUpCallback);
             }
         });
     }

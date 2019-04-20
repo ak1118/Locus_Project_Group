@@ -1,5 +1,5 @@
 projects:
-  locus:
+  locus5:
     schemaPath: app\src\main\graphql\schema.json
     includes:
       - app\src\main\graphql\**\*.graphql
@@ -10,7 +10,7 @@ projects:
         codeGenTarget: ''
         generatedFileName: ''
         docsFilePath: app\src\main\graphql\com\amazonaws\amplify\generated\graphql
-        graphQLApiId: ktark4vy4fbw5afy6hjnoqlzvu
+        graphQLApiId: uigitjryejbnxnszziult6e5qq
       endpoints:
         prod: >-
-          https://y3u5buzy2ndmrlkbsvapoeytpi.appsync-api.us-east-1.amazonaws.com/graphql
+          https://yuqkcldcpfhdtezfv5hjb53ftq.appsync-api.us-east-1.amazonaws.com/graphql

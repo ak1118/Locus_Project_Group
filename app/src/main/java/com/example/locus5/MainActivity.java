@@ -1,9 +1,8 @@
-package com.example.locus;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.locus5;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -22,9 +21,7 @@ import com.amazonaws.mobileconnectors.cognitoidentityprovider.continuations.Chal
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.continuations.MultiFactorAuthenticationContinuation;
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.handlers.AuthenticationHandler;
 
-
 public class MainActivity extends AppCompatActivity {
-
     private static final String TAG = "MainActivity";
 
     @Override
@@ -40,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         final AuthenticationHandler authenticationHandler = new AuthenticationHandler() {
             @Override
             public void onSuccess(CognitoUserSession userSession, CognitoDevice newDevice) {
-                Intent alphaIntent = new Intent(MainActivity.this, AlphaActivity.class);
+                Intent alphaIntent = new Intent(MainActivity.this, FirstLayerActivity.class);
                 MainActivity.this.startActivity(alphaIntent);
             }
 
@@ -79,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         registerLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent registerIntent = new Intent(MainActivity.this, RegisterActivity.class);
+                Intent registerIntent = new Intent(MainActivity.this, RegistrationActivity.class);
                 MainActivity.this.startActivity(registerIntent);
             }
         });
@@ -93,13 +90,6 @@ public class MainActivity extends AppCompatActivity {
             public void onError(Exception e) {
                 Log.e("INIT", "Initialization error.", e);
             }
-
         });
-
-
-
-
     }
-
-
 }

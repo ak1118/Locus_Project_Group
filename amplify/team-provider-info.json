@@ -1,18 +1,18 @@
 {
-    "ak": {
+    "android": {
         "awscloudformation": {
-            "AuthRoleName": "locus-20190330002549-authRole",
-            "UnauthRoleArn": "arn:aws:iam::515337481886:role/locus-20190330002549-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::515337481886:role/locus-20190330002549-authRole",
+            "AuthRoleName": "locus5-20190420023014-authRole",
+            "UnauthRoleArn": "arn:aws:iam::515337481886:role/locus5-20190420023014-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::515337481886:role/locus5-20190420023014-authRole",
             "Region": "us-east-1",
-            "DeploymentBucketName": "locus-20190330002549-deployment",
-            "UnauthRoleName": "locus-20190330002549-unauthRole",
-            "StackName": "locus-20190330002549",
-            "StackId": "arn:aws:cloudformation:us-east-1:515337481886:stack/locus-20190330002549/e602c980-52a3-11e9-9d58-0a583df6bf38"
+            "DeploymentBucketName": "locus5-20190420023014-deployment",
+            "UnauthRoleName": "locus5-20190420023014-unauthRole",
+            "StackName": "locus5-20190420023014",
+            "StackId": "arn:aws:cloudformation:us-east-1:515337481886:stack/locus5-20190420023014/c21c1e70-6335-11e9-8037-0a7c2d2d58f6"
         },
         "categories": {
             "auth": {
-                "cognito7314c1ec": {}
+                "cognito41200e5f": {}
             }
         }
     }
