@@ -1,9 +1,8 @@
-package com.example.locus5;
+package com.example.locus;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -28,26 +27,17 @@ public class RegistrationActivity extends AppCompatActivity {
 
         final CognitoUserAttributes userAttributes = new CognitoUserAttributes();
 
-        final SignUpHandler signUpCallback = new SignUpHandler() {
+        final SignUpHandler signUpHandler = new SignUpHandler() {
             @Override
             public void onSuccess(CognitoUser user, boolean signUpConfirmationState, CognitoUserCodeDeliveryDetails cognitoUserCodeDeliveryDetails) {
-                Log.i(TAG, "sign up successful: " + signUpConfirmationState);
-                if (!signUpConfirmationState){
-                    Log.i(TAG, "sign up successful but not confirmed, verification code sent to: " + cognitoUserCodeDeliveryDetails.getDestination());
-                    Intent verifyIntent = new Intent(RegistrationActivity.this, VerificationActivity.class);
-                    RegistrationActivity.this.startActivity(verifyIntent);
-                }
-                else {
-                    Log.i(TAG, "sign up successful");
-                }
+                Intent mainIntent = new Intent(RegistrationActivity.this, MainActivity.class);
+                RegistrationActivity.this.startActivity(mainIntent);
             }
 
             @Override
             public void onFailure(Exception exception) {
-                Intent verifyIntent = new Intent(RegistrationActivity.this, VerificationActivity.class);
-                RegistrationActivity.this.startActivity(verifyIntent);
-                Log.i(TAG, "sign up failure:" + exception.getLocalizedMessage());
-
+                Intent mainIntent = new Intent(RegistrationActivity.this, MainActivity.class);
+                RegistrationActivity.this.startActivity(mainIntent);
             }
         };
 
@@ -60,7 +50,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 userAttributes.addAttribute("email", String.valueOf(etEmail.getText()));
 
                 CognitoSettings cognitoSettings = new CognitoSettings(RegistrationActivity.this);
-                cognitoSettings.getUserPool().signUpInBackground(String.valueOf(etUsername.getText()), String.valueOf(etPassword.getText()), userAttributes,null, signUpCallback);
+                cognitoSettings.getUserPool().signUp(String.valueOf(etUsername.getText()), String.valueOf(etPassword.getText()), userAttributes, null, signUpHandler);
             }
         });
     }

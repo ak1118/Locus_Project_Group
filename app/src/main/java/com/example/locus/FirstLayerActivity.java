@@ -1,4 +1,4 @@
-package com.example.locus5;
+package com.example.locus;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

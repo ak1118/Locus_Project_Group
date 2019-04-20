@@ -1,4 +1,4 @@
-package com.example.locus5;
+package com.example.locus;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.locus5", appContext.getPackageName());
+        assertEquals("com.example.locus", appContext.getPackageName());
     }
 }

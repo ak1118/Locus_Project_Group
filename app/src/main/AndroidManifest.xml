@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.locus5">
+    package="com.example.locus">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -16,19 +16,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FirstLayerActivity">
+        <activity android:name="com.example.locus.FirstLayerActivity" />
+        <activity android:name="com.example.locus.RegistrationActivity" />
+        <activity android:name="com.example.locus.VerificationActivity" />
+
+        <service android:name="org.eclipse.paho.android.service.MqttService" />
+
+        <activity android:name="com.example.locus.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".RegistrationActivity" />
-        <activity android:name=".VerificationActivity" />
-
-        <service android:name="org.eclipse.paho.android.service.MqttService" />
-
-        <activity android:name=".MainActivity">
         </activity>
     </application>
 
