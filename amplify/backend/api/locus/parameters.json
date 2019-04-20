@@ -1,9 +1,9 @@
 {
-    "AppSyncApiName": "locus5",
+    "AppSyncApiName": "locus",
     "DynamoDBBillingMode": "PAY_PER_REQUEST",
     "AuthCognitoUserPoolId": {
         "Fn::GetAtt": [
-            "authcognito41200e5f",
+            "authcognitoae99bc70",
             "Outputs.UserPoolId"
         ]
     }

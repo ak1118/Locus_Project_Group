@@ -15,12 +15,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name="com.example.locus.FirstLayerActivity" />
-        <activity android:name="com.example.locus.RegistrationActivity" />
-        <activity android:name="com.example.locus.VerificationActivity" />
-
-        <service android:name="org.eclipse.paho.android.service.MqttService" />
+        android:theme="@style/Theme.Design.NoActionBar">
+        <activity android:name=".VerificationActivity" />
+        <activity android:name=".RegistrationActivity" />
+        <activity android:name=".FirstLayerActivity" />
 
         <activity android:name="com.example.locus.MainActivity">
             <intent-filter>
@@ -29,6 +27,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service android:name="org.eclipse.paho.android.service.MqttService" />
     </application>
 
 </manifest>

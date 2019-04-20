@@ -7,30 +7,30 @@
     "CredentialsProvider": {
         "CognitoIdentity": {
             "Default": {
-                "PoolId": "us-east-1:77b60b2a-b7fe-4d2b-a5c1-d71b9b0e7c14",
+                "PoolId": "us-east-1:c2b97b16-6533-4e70-afe9-fa4ad3cd4c30",
                 "Region": "us-east-1"
             }
         }
     },
     "CognitoUserPool": {
         "Default": {
-            "PoolId": "us-east-1_ur6bokDS4",
-            "AppClientId": "1kk0u963edapah0fd8q684su82",
-            "AppClientSecret": "14mjrk37k2vv3lid6jgrvb2gcpgu077jqm3lmq31is5tu7hsk2s8",
+            "PoolId": "us-east-1_vPFdzSTgl",
+            "AppClientId": "3j5inunncd185rcpil4h7th7us",
+            "AppClientSecret": "g0o5h9p7u8bc34hagff0he51k4d7hiiuehnkm0jkh5daok2juvi",
             "Region": "us-east-1"
         }
     },
     "Auth": {
         "Default": {
             "OAuth": {
-                "AppClientId": "1kk0u963edapah0fd8q684su82",
-                "AppClientSecret": "14mjrk37k2vv3lid6jgrvb2gcpgu077jqm3lmq31is5tu7hsk2s8"
+                "AppClientId": "3j5inunncd185rcpil4h7th7us",
+                "AppClientSecret": "g0o5h9p7u8bc34hagff0he51k4d7hiiuehnkm0jkh5daok2juvi"
             }
         }
     },
     "AppSync": {
         "Default": {
-            "ApiUrl": "https://yuqkcldcpfhdtezfv5hjb53ftq.appsync-api.us-east-1.amazonaws.com/graphql",
+            "ApiUrl": "https://cm65nb3gg5a7xci7du74abbaty.appsync-api.us-east-1.amazonaws.com/graphql",
             "Region": "us-east-1",
             "AuthMode": "AMAZON_COGNITO_USER_POOLS"
         }

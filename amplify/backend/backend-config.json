@@ -1,12 +1,12 @@
 {
 	"auth": {
-		"cognito41200e5f": {
+		"cognitoae99bc70": {
 			"service": "Cognito",
 			"providerPlugin": "awscloudformation"
 		}
 	},
 	"api": {
-		"locus5": {
+		"locus": {
 			"service": "AppSync",
 			"providerPlugin": "awscloudformation",
 			"output": {

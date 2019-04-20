@@ -22,7 +22,6 @@ import com.amazonaws.mobileconnectors.cognitoidentityprovider.continuations.Mult
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.handlers.AuthenticationHandler;
 
 public class MainActivity extends AppCompatActivity {
-    private static final String TAG = "MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +59,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Exception exception) {
-
+                Intent alphaIntent = new Intent(MainActivity.this, FirstLayerActivity.class);
+                MainActivity.this.startActivity(alphaIntent);
             }
         };
 
