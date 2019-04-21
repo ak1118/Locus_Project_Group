@@ -10,7 +10,7 @@ projects:
         codeGenTarget: ''
         generatedFileName: ''
         docsFilePath: app\src\main\graphql\com\amazonaws\amplify\generated\graphql
-        graphQLApiId: 4iaw3w4yn5c5xmbk62vouuupt4
+        graphQLApiId: wv24pwsykrer7bnxroh2quizta
       endpoints:
         prod: >-
-          https://cm65nb3gg5a7xci7du74abbaty.appsync-api.us-east-1.amazonaws.com/graphql
+          https://xo2av5x2rncjrocutv7r4n4pm4.appsync-api.us-east-1.amazonaws.com/graphql

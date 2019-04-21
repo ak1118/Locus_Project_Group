@@ -21,23 +21,23 @@ import com.amazonaws.mobileconnectors.cognitoidentityprovider.continuations.Chal
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.continuations.MultiFactorAuthenticationContinuation;
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.handlers.AuthenticationHandler;
 
-public class MainActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
+        setContentView(R.layout.activity_login);
         final EditText etUsername = (EditText) findViewById(R.id.etUsername);
         final EditText etPassword = (EditText) findViewById(R.id.etPassword);
         final Button bLogin = (Button) findViewById(R.id.bLogin);
         final TextView registerLink = (TextView) findViewById(R.id.tvRegister);
+        final TextView helpLink = (TextView) findViewById(R.id.tvHelp);
 
         final AuthenticationHandler authenticationHandler = new AuthenticationHandler() {
             @Override
             public void onSuccess(CognitoUserSession userSession, CognitoDevice newDevice) {
-                Intent alphaIntent = new Intent(MainActivity.this, FirstLayerActivity.class);
-                MainActivity.this.startActivity(alphaIntent);
+                Intent alphaIntent = new Intent(LoginActivity.this, FirstLayerActivity.class);
+                LoginActivity.this.startActivity(alphaIntent);
             }
 
             @Override
@@ -59,15 +59,14 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Exception exception) {
-                Intent alphaIntent = new Intent(MainActivity.this, FirstLayerActivity.class);
-                MainActivity.this.startActivity(alphaIntent);
+
             }
         };
 
         bLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CognitoSettings cognitoSettings = new CognitoSettings(MainActivity.this);
+                CognitoSettings cognitoSettings = new CognitoSettings(LoginActivity.this);
                 CognitoUser thisUser = cognitoSettings.getUserPool().getUser(String.valueOf(etUsername.getText()));
                 thisUser.getSessionInBackground(authenticationHandler);
             }
@@ -76,10 +75,19 @@ public class MainActivity extends AppCompatActivity {
         registerLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent registerIntent = new Intent(MainActivity.this, RegistrationActivity.class);
-                MainActivity.this.startActivity(registerIntent);
+                Intent registerIntent = new Intent(LoginActivity.this, RegistrationActivity.class);
+                LoginActivity.this.startActivity(registerIntent);
             }
         });
+
+        helpLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent verificationIntent = new Intent(LoginActivity.this, VerificationActivity.class);
+                LoginActivity.this.startActivity(verificationIntent);
+            }
+        });
+
 
         AWSMobileClient.getInstance().initialize(getApplicationContext(), new Callback<UserStateDetails>() {
             @Override

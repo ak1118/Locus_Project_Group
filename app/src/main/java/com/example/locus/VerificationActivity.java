@@ -29,8 +29,6 @@ public class VerificationActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 new ConfirmTask().execute(String.valueOf(etVerification.getText()), String.valueOf(etUsername.getText()));
-                Intent mainIntent = new Intent(VerificationActivity.this, MainActivity.class);
-                VerificationActivity.this.startActivity(mainIntent);
             }
         });
     }
@@ -43,6 +41,8 @@ public class VerificationActivity extends AppCompatActivity {
                 @Override
                 public void onSuccess() {
                     result[0] = "Succeeded!";
+                    Intent mainIntent = new Intent(VerificationActivity.this, LoginActivity.class);
+                    VerificationActivity.this.startActivity(mainIntent);
                 }
                 public void onFailure(Exception exception) {
                     result[0] = "Failed" + exception.getMessage();
