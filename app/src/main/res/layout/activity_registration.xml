@@ -4,27 +4,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/locus_background"
-    android:paddingLeft="18dp"
-    android:paddingRight="18dp"
-    android:paddingBottom="30dp"
+    android:background="@drawable/welcome_color"
+    android:paddingTop="18dp"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:paddingBottom="18dp"
     tools:context=".RegistrationActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Registratin Form"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/background_login"
+        android:paddingBottom="18dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="70dp"
-                android:background="@drawable/locus_logo"
-                android:padding="16dp" />
+            android:orientation="vertical"
+            android:paddingTop="18dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
 
             <EditText
                 android:id="@+id/etUsernameR"
@@ -34,8 +51,13 @@
                 android:ems="10"
                 android:hint="Username, ID"
                 android:drawableLeft="@drawable/ic_person_outline_red_400_24dp"
-                android:textColorHint="#696969"
+                android:textColor="#000000"
+                android:textColorHint="#000000"
                 android:inputType="textPersonName"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#F19999" />
 
             <EditText
                 android:id="@+id/etPasswordR"
@@ -44,11 +66,16 @@
                 android:maxLines="1"
                 android:ems="10"
                 android:hint="Password"
-                android:textColorHint="#696969"
+                android:textColor="#000000"
+                android:textColorHint="#000000"
                 android:drawableLeft="@drawable/ic_lock_red_400_24dp"
                 android:inputType="textPassword"
                 tools:layout_editor_absoluteX="13dp"
                 tools:layout_editor_absoluteY="146dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#F19999" />
 
             <EditText
                 android:id="@+id/etNameR"
@@ -57,8 +84,14 @@
                 android:maxLines="1"
                 android:ems="10"
                 android:hint="Name"
-                android:textColorHint="#696969"
+                android:textColor="#000000"
+                android:textColorHint="#000000"
                 android:inputType="textPersonName"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#F19999" />
 
             <EditText
                 android:id="@+id/etEmailR"
@@ -67,10 +100,16 @@
                 android:maxLines="1"
                 android:ems="10"
                 android:hint="Email"
-                android:textColorHint="#696969"
+                android:textColor="#000000"
+                android:textColorHint="#000000"
                 android:inputType="textEmailAddress"
                 tools:layout_editor_absoluteX="10dp"
                 tools:layout_editor_absoluteY="206dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#F19999" />
 
             <EditText
                 android:id="@+id/etPhoneNumberR"
@@ -79,34 +118,31 @@
                 android:maxLines="1"
                 android:ems="10"
                 android:hint="Phone Number"
-                android:textColorHint="#696969"
+                android:textColor="#000000"
+                android:textColorHint="#000000"
                 tools:layout_editor_absoluteX="10dp"
                 tools:layout_editor_absoluteY="206dp"/>
 
-            <EditText
-                android:id="@+id/Display"
+            <View
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:maxLines="1"
-                android:ems="10"
-                android:hint=""
-                android:textColorHint="#696969"
-                tools:layout_editor_absoluteX="10dp"
-                tools:layout_editor_absoluteY="206dp"/>
+                android:layout_height="2dp"
+                android:background="#F19999"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="30dp"/>
 
             <Button
                 android:id="@+id/bRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/background_login"
+                android:background="@drawable/background_login_two"
                 android:clickable="true"
                 android:padding="16dp"
                 android:text="Register"
                 android:textAllCaps="false"
-                android:textColor="#79A78C"
-                android:textSize="18sp"
-                tools:layout_editor_absoluteX="10dp"
-                tools:layout_editor_absoluteY="266dp" />
+                android:textColor="#000000"
+                android:textSize="18sp"/>
 
         </LinearLayout>
     </ScrollView>

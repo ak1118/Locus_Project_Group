@@ -7,8 +7,11 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.amazonaws.mobile.client.AWSMobileClient;
@@ -25,6 +28,7 @@ import com.amazonaws.mobileconnectors.cognitoidentityprovider.handlers.Authentic
 
 public class LoginActivity extends AppCompatActivity {
 
+
     private static final String TAG = "MainActivity";
 
     @Override
@@ -37,6 +41,10 @@ public class LoginActivity extends AppCompatActivity {
         final Button buttonLogin = (Button) findViewById(R.id.bLogin);
         final TextView registerLink = (TextView) findViewById(R.id.tvRegister);
         final TextView helpLink = (TextView) findViewById(R.id.tvHelp);
+
+        LinearLayout layoutLogin = (LinearLayout) findViewById(R.id.layoutLoginTwo);
+        Animation downToUp = AnimationUtils.loadAnimation(this,R.anim.downtoup);
+        layoutLogin.setAnimation(downToUp);
 
         final AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
         builder.setCancelable(true);
@@ -58,8 +66,6 @@ public class LoginActivity extends AppCompatActivity {
             public void onSuccess(CognitoUserSession userSession, CognitoDevice newDevice) {
                 Intent alphaIntent = new Intent(LoginActivity.this, FirstLayerActivity.class);
                 LoginActivity.this.startActivity(alphaIntent);
-
-
             }
 
             @Override
@@ -71,12 +77,10 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void getMFACode(MultiFactorAuthenticationContinuation continuation) {
-
             }
 
             @Override
             public void authenticationChallenge(ChallengeContinuation continuation) {
-
             }
 
             @Override

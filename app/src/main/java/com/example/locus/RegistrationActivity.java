@@ -27,7 +27,6 @@ public class RegistrationActivity extends AppCompatActivity {
         final EditText editTextUsernameR = (EditText) findViewById(R.id.etUsernameR);
         final EditText editTextPasswordR = (EditText) findViewById(R.id.etPasswordR);
         final EditText editTextEmailR = (EditText) findViewById(R.id.etEmailR);
-        final EditText editTextDisplay = (EditText) findViewById(R.id.Display);
         final EditText editTextPhoneR = (EditText) findViewById(R.id.etPhoneNumberR);
         final Button buttonRegister = (Button) findViewById(R.id.bRegister);
 
