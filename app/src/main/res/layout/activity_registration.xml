@@ -27,18 +27,18 @@
                 android:padding="16dp" />
 
             <EditText
-                android:id="@+id/etName"
+                android:id="@+id/etUsernameR"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:maxLines="1"
                 android:ems="10"
-                android:hint="Name"
+                android:hint="Username, ID"
                 android:drawableLeft="@drawable/ic_person_outline_red_400_24dp"
                 android:textColorHint="#696969"
                 android:inputType="textPersonName"/>
 
             <EditText
-                android:id="@+id/etPassword"
+                android:id="@+id/etPasswordR"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:maxLines="1"
@@ -51,7 +51,17 @@
                 tools:layout_editor_absoluteY="146dp"/>
 
             <EditText
-                android:id="@+id/etEmail"
+                android:id="@+id/etNameR"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:ems="10"
+                android:hint="Name"
+                android:textColorHint="#696969"
+                android:inputType="textPersonName"/>
+
+            <EditText
+                android:id="@+id/etEmailR"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:maxLines="1"
@@ -63,12 +73,23 @@
                 tools:layout_editor_absoluteY="206dp"/>
 
             <EditText
-                android:id="@+id/etPhoneNumber"
+                android:id="@+id/etPhoneNumberR"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:maxLines="1"
                 android:ems="10"
                 android:hint="Phone Number"
+                android:textColorHint="#696969"
+                tools:layout_editor_absoluteX="10dp"
+                tools:layout_editor_absoluteY="206dp"/>
+
+            <EditText
+                android:id="@+id/Display"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:ems="10"
+                android:hint=""
                 android:textColorHint="#696969"
                 tools:layout_editor_absoluteX="10dp"
                 tools:layout_editor_absoluteY="206dp"/>

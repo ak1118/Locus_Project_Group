@@ -1,5 +1,7 @@
 package com.example.locus;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -21,16 +23,42 @@ public class VerificationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verification);
 
-        final EditText etUsername = (EditText) findViewById(R.id.etUsername);
-        final EditText etVerification = (EditText) findViewById(R.id.etVerificationCode);
+        final EditText editTextUsernameV = (EditText) findViewById(R.id.etUsernameV);
+        final EditText editTextVerification = (EditText) findViewById(R.id.etVerificationCode);
+
+        final AlertDialog.Builder builder = new AlertDialog.Builder(VerificationActivity.this);
+        builder.setCancelable(true);
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
 
         final Button bVerify = (Button) findViewById(R.id.bVerification);
         bVerify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new ConfirmTask().execute(String.valueOf(etVerification.getText()), String.valueOf(etUsername.getText()));
+                if (String.valueOf(editTextUsernameV.getText()).matches("") || String.valueOf(editTextVerification.getText()).matches("")) {
+                    builder.setTitle("Locus");
+                    builder.setMessage("The verification code or username you entered is incorrect: empty field(s)");
+                    builder.show();
+                }
+                else {
+                    new ConfirmTask().execute(String.valueOf(editTextVerification.getText()), String.valueOf(editTextUsernameV.getText()));
+                    builder.setTitle("Locus");
+                    builder.setMessage("The verification code or username you entered is incorrect.");
+                    builder.show();
+                }
             }
         });
+
     }
     private class ConfirmTask extends AsyncTask<String, Void, String> {
 
@@ -45,7 +73,7 @@ public class VerificationActivity extends AppCompatActivity {
                     VerificationActivity.this.startActivity(mainIntent);
                 }
                 public void onFailure(Exception exception) {
-                    result[0] = "Failed" + exception.getMessage();
+
                 }
             };
             CognitoSettings cognitoSettings = new CognitoSettings(VerificationActivity.this);
