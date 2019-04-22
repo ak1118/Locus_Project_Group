@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">Locus</string>
     <string name="action_settings">Settings</string>
+    <string name="nav_x">X</string>
+    <string name="nav_Me">Me</string>
+    <string name="nav_y">y</string>
+    <string name="nav_Menu">Menu</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

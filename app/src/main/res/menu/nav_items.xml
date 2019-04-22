@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_x"
+        android:icon="@drawable/ic_person_outline_red_400_24dp"
+        android:title="@string/nav_x" />
+    <item
+        android:id="@+id/nav_y"
+        android:icon="@drawable/ic_lock_red_400_24dp"
+        android:title="@string/nav_y" />
+    <item
+        android:id="@+id/nav_me"
+        android:icon="@drawable/ic_google_plus"
+        android:title="@string/nav_Me" />
+    <item
+        android:id="@+id/nav_menu"
+        android:icon="@drawable/locus_logo"
+        android:title="@string/nav_Menu" />
+</menu>

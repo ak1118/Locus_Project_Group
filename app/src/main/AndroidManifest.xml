@@ -24,8 +24,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".VerificationActivity" />
-        <activity android:name=".LoginActivity">
-        </activity>
+        <activity android:name=".LoginActivity" />
         <activity android:name=".RegistrationActivity" />
         <activity android:name=".FirstLayerActivity" />
 
