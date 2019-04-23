@@ -27,11 +27,13 @@
     </LinearLayout>
 
     <ScrollView
+        android:id="@+id/layoutRegistrationOne"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:background="@drawable/background_login"
+        android:background="@drawable/background_menu"
         android:paddingBottom="12dp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -44,93 +46,73 @@
                 android:id="@+id/etUsernameR"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
                 android:maxLines="1"
                 android:textSize="14dp"
+                android:padding="6dp"
+                android:background="@drawable/background_menu_two"
                 android:hint="Username, ID"
                 android:drawableLeft="@drawable/ic_person_outline_red_400_24dp"
                 android:textColor="#000000"
-                android:textColorHint="#000000"
+                android:textColorHint="@color/colorHint"
                 android:inputType="textPersonName"/>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#F19999" />
 
             <EditText
                 android:id="@+id/etPasswordR"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/background_menu_two"
                 android:maxLines="1"
-                android:ems="10"
+                android:padding="6dp"
                 android:hint="Password"
                 android:textColor="#000000"
-                android:textColorHint="#000000"
+                android:textColorHint="@color/colorHint"
                 android:textSize="14dp"
                 android:drawableLeft="@drawable/ic_lock_red_400_24dp"
-                android:inputType="textPassword"
-                tools:layout_editor_absoluteX="13dp"
-                tools:layout_editor_absoluteY="146dp"/>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#F19999" />
+                android:inputType="textPassword"/>
 
             <EditText
                 android:id="@+id/etNameR"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:maxLines="1"
-                android:ems="10"
+                android:padding="6dp"
                 android:hint="Name"
                 android:textSize="14dp"
+                android:background="@drawable/background_menu_two"
                 android:textColor="#000000"
-                android:textColorHint="#000000"
+                android:textColorHint="@color/colorHint"
                 android:inputType="textPersonName"/>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#F19999" />
 
             <EditText
                 android:id="@+id/etEmailR"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:maxLines="1"
+                android:padding="6dp"
                 android:hint="Email"
                 android:textSize="14dp"
+                android:background="@drawable/background_menu_two"
                 android:textColor="#000000"
-                android:textColorHint="#000000"
-                android:inputType="textEmailAddress"
-                tools:layout_editor_absoluteX="10dp"
-                tools:layout_editor_absoluteY="206dp"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#F19999" />
+                android:textColorHint="@color/colorHint"
+                android:inputType="textEmailAddress"/>
 
             <EditText
                 android:id="@+id/etPhoneNumberR"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:maxLines="1"
-                android:ems="10"
+                android:padding="6dp"
                 android:hint="Phone Number"
                 android:textSize="14dp"
+                android:background="@drawable/background_menu_two"
                 android:textColor="#000000"
-                android:textColorHint="#000000"
-                tools:layout_editor_absoluteX="10dp"
-                tools:layout_editor_absoluteY="206dp"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#F19999"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="15dp"/>
+                android:textColorHint="@color/colorHint"/>
 
             <Button
                 android:id="@+id/bRegister"
@@ -138,11 +120,11 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/background_login_two"
                 android:clickable="true"
+                android:layout_marginTop="25dp"
                 android:padding="16dp"
                 android:text="Register"
-                android:textAllCaps="false"
-                android:textColor="#000000"
-                android:textSize="15sp"/>
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"/>
 
         </LinearLayout>
     </ScrollView>

@@ -7,8 +7,11 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUser;
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUserPool;
@@ -25,6 +28,10 @@ public class VerificationActivity extends AppCompatActivity {
 
         final EditText editTextUsernameV = (EditText) findViewById(R.id.etUsernameV);
         final EditText editTextVerification = (EditText) findViewById(R.id.etVerificationCode);
+
+        LinearLayout layoutVerification = (LinearLayout) findViewById(R.id.layoutVerificationTwo);
+        Animation downToUp = AnimationUtils.loadAnimation(this,R.anim.downtoup);
+        layoutVerification.setAnimation(downToUp);
 
         final AlertDialog.Builder builder = new AlertDialog.Builder(VerificationActivity.this);
         builder.setCancelable(true);

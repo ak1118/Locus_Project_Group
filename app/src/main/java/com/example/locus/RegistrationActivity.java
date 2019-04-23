@@ -7,8 +7,11 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ScrollView;
 
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUser;
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUserAttributes;
@@ -30,6 +33,9 @@ public class RegistrationActivity extends AppCompatActivity {
         final EditText editTextPhoneR = (EditText) findViewById(R.id.etPhoneNumberR);
         final Button buttonRegister = (Button) findViewById(R.id.bRegister);
 
+        ScrollView layoutRegistration = (ScrollView) findViewById(R.id.layoutRegistrationOne);
+        Animation downToUp = AnimationUtils.loadAnimation(this,R.anim.downtoup);
+        layoutRegistration.setAnimation(downToUp);
 
         final AlertDialog.Builder builder = new AlertDialog.Builder(RegistrationActivity.this);
         builder.setCancelable(true);

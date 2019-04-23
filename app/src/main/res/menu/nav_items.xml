@@ -11,11 +11,11 @@
         android:icon="@drawable/ic_lock_red_400_24dp"
         android:title="@string/nav_y" />
     <item
+        android:id="@+id/nav_z"
+        android:icon="@drawable/locus_logo"
+        android:title="@string/nav_z" />
+    <item
         android:id="@+id/nav_me"
         android:icon="@drawable/ic_google_plus"
         android:title="@string/nav_Me" />
-    <item
-        android:id="@+id/nav_menu"
-        android:icon="@drawable/locus_logo"
-        android:title="@string/nav_Menu" />
 </menu>

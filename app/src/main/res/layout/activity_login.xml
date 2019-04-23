@@ -32,12 +32,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="@drawable/background_login"
+        android:background="@drawable/background_menu"
         android:orientation="vertical"
         android:paddingLeft="15dp"
         android:paddingTop="25dp"
         android:paddingRight="15dp"
-        android:paddingBottom="15dp"
+        android:paddingBottom="10dp"
         app:layout_constraintBottom_toTopOf="@id/bottomAlign"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent">
@@ -46,55 +46,41 @@
             android:id="@+id/etUsername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:autofillHints=""
-            android:background="@android:color/transparent"
+            android:background="@drawable/background_menu_two"
             android:drawableLeft="@drawable/ic_person_outline_red_400_24dp"
-            android:ems="10"
             android:hint="Username"
+            android:padding="6dp"
             android:inputType="textPersonName"
             android:maxLines="1"
             android:textSize="14sp"
             android:textColor="#000000"
-            android:textColorHint="#000000"
-            tools:layout_editor_absoluteY="156dp"
-            tools:targetApi="o" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="#F19999" />
+            android:textColorHint="@color/colorHint"/>
 
         <EditText
             android:id="@+id/etPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@android:color/transparent"
+            android:layout_marginTop="10dp"
+            android:padding="6dp"
+            android:background="@drawable/background_menu_two"
             android:drawableLeft="@drawable/ic_lock_red_400_24dp"
-            android:ems="10"
             android:hint="Password"
             android:textSize="14sp"
             android:inputType="textPassword"
             android:maxLines="1"
             android:textColor="#000000"
-            android:textColorHint="#000000" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="#F19999" />
+            android:textColorHint="@color/colorHint" />
 
         <Button
             android:id="@+id/bLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:background="@drawable/background_login_two"
             android:clickable="true"
             android:padding="16dp"
-            android:text="Log In"
-            android:textAllCaps="false"
-            android:textColor="#000000"
+            android:text="LogIn"
+            android:textColor="#FFFFFF"
             android:textSize="15sp" />
 
 
@@ -103,7 +89,9 @@
             android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="6dp"
+            android:background="@drawable/background_menu"
+            android:padding="5dp"
+            android:layout_marginTop="10dp"
             android:orientation="horizontal">
 
             <TextView
@@ -111,16 +99,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
                 android:text="Sign Up for Locus"
                 android:textColor="#000000"
                 android:textSize="14sp" />
 
             <TextView
-
                 android:id="@+id/tvHelp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
                 android:text="Need Help?"
                 android:textColor="#000000"
                 android:textSize="14sp" />

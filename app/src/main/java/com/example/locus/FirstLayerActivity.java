@@ -3,31 +3,33 @@ package com.example.locus;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-import android.widget.FrameLayout;
+import android.widget.TextView;
+
+import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUser;
+import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUserDetails;
+import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUserPool;
+import com.amazonaws.mobileconnectors.cognitoidentityprovider.handlers.GetDetailsHandler;
+
+import java.util.Map;
 
 public class FirstLayerActivity extends AppCompatActivity {
 
     private BottomNavigationView mMainNav;
-    private FrameLayout mMainFrame;
-
-    private MeFragment meFragment;
-    private MenuFragment menuFragment;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_layer);
 
-        mMainFrame = (FrameLayout) findViewById(R.id.main_frame);
         mMainNav = (BottomNavigationView) findViewById(R.id.main_nav);
 
-        meFragment = new MeFragment();
-        menuFragment = new MenuFragment();
+        CognitoSettings cognitoSettings = new CognitoSettings(FirstLayerActivity.this);
+        CognitoUserPool userPool = cognitoSettings.getUserPool();
+        CognitoUser user = userPool.getCurrentUser();
+
+        final TextView textViewName = (TextView) findViewById(R.id.tvNameFirst);
+
 
         mMainNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -40,22 +42,33 @@ public class FirstLayerActivity extends AppCompatActivity {
                         return true;
 
                     case R.id.nav_me :
-                        setFragment(meFragment);
                         return true;
 
-                    case R.id.nav_menu :
-                        setFragment(menuFragment);
+                    case R.id.nav_z:
                         return true;
 
                 }
                 return false;
             }
         });
-    }
+        //Get User Information
+        GetDetailsHandler handler = new GetDetailsHandler() {
+            @Override
+            public void onSuccess(final CognitoUserDetails list) {
+                Map mDetails = list.getAttributes().getAttributes();
+                String name = mDetails.get("given_name").toString();
+                String eMail = mDetails.get("email").toString();
+                String phone_number = mDetails.get("phone_number").toString();
+                textViewName.setText("name: " + name +"Email: " + eMail + "Phone Number: " + phone_number);
+                // Successfully retrieved user details
+            }
 
-    private void setFragment(Fragment fragment){
-        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.main_frame, fragment);
-        fragmentTransaction.commit();
+            @Override
+            public void onFailure(final Exception exception) {
+                // Failed to retrieve the user details, probe exception for the cause
+            }
+        };
+
+        user.getDetailsInBackground(handler);
     }
 }
