@@ -15,38 +15,42 @@ import com.amazonaws.mobileconnectors.cognitoidentityprovider.handlers.GetDetail
 
 import java.util.Map;
 
-public class FirstLayerActivity extends AppCompatActivity {
+public class MeActivity extends AppCompatActivity {
 
     private BottomNavigationView mMainNav;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_first_layer);
+        setContentView(R.layout.activity_me);
 
-        CognitoSettings cognitoSettings = new CognitoSettings(FirstLayerActivity.this);
+        CognitoSettings cognitoSettings = new CognitoSettings(MeActivity.this);
         CognitoUserPool userPool = cognitoSettings.getUserPool();
         CognitoUser user = userPool.getCurrentUser();
 
-        final TextView textViewName = (TextView) findViewById(R.id.tvNameFirst);
-        mMainNav = (BottomNavigationView) findViewById(R.id.main_nav);
-        mMainNav.getMenu().getItem(0).setChecked(true);
+        final TextView textViewNameMe = (TextView) findViewById(R.id.tvNameMe);
+        final TextView textViewEmailMe = (TextView) findViewById(R.id.tvEmaiMe);
+        final TextView textViewPhoneMe = (TextView) findViewById(R.id.tvPhoneMe);
+
+        mMainNav = (BottomNavigationView) findViewById(R.id.main_nav_me);
+        mMainNav.getMenu().getItem(3).setChecked(true);
 
         mMainNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
                     case R.id.nav_x :
+                        Intent xIntent = new Intent(MeActivity.this, FirstLayerActivity.class);
+                        MeActivity.this.startActivity(xIntent);
                         return true;
 
                     case R.id.nav_y :
                         return true;
 
+
                     case R.id.nav_z:
                         return true;
 
                     case R.id.nav_me :
-                        Intent meIntent = new Intent(FirstLayerActivity.this, MeActivity.class);
-                        FirstLayerActivity.this.startActivity(meIntent);
                         return true;
 
                 }
@@ -54,7 +58,9 @@ public class FirstLayerActivity extends AppCompatActivity {
             }
         });
 
-        //Get User Information
+        //final NavigationMenuItemView view = (NavigationMenuItemView) findViewById(R.id.nav_me);
+        //view.setEnabled(true);
+
         GetDetailsHandler handler = new GetDetailsHandler() {
             @Override
             public void onSuccess(final CognitoUserDetails list) {
@@ -62,7 +68,10 @@ public class FirstLayerActivity extends AppCompatActivity {
                 String name = mDetails.get("given_name").toString();
                 String eMail = mDetails.get("email").toString();
                 String phone_number = mDetails.get("phone_number").toString();
-                textViewName.setText("Name:  " + name + "   " + "Email: " + eMail + "   " + "Phone Number:  " + phone_number);
+                textViewNameMe.setText("Name:  " + name);
+                textViewEmailMe.setText("Email:  " + eMail);
+                textViewPhoneMe.setText("Phone:  " + phone_number);
+
                 // Successfully retrieved user details
             }
 
@@ -73,5 +82,6 @@ public class FirstLayerActivity extends AppCompatActivity {
         };
 
         user.getDetailsInBackground(handler);
+
     }
 }

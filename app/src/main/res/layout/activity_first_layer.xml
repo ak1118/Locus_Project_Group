@@ -5,8 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/welcome_color"
-    android:paddingTop="10dp"
-    android:paddingBottom="10dp"
     tools:context=".FirstLayerActivity">
 
     <android.support.design.widget.BottomNavigationView
@@ -19,11 +17,20 @@
         app:itemIconTint="@drawable/nav_item_colors"
         app:menu="@menu/nav_items"></android.support.design.widget.BottomNavigationView>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/background_menu"
+        android:paddingBottom="12dp">
+
+    </ScrollView>
     <TextView
         android:id="@+id/tvNameFirst"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/colorHint"
         android:text="TextView" />
-
 
 </RelativeLayout>

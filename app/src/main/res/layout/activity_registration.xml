@@ -50,10 +50,10 @@
                 android:maxLines="1"
                 android:textSize="14dp"
                 android:padding="6dp"
-                android:background="@drawable/background_menu_two"
+                android:background="@drawable/background_login"
                 android:hint="Username, ID"
                 android:drawableLeft="@drawable/ic_person_outline_red_400_24dp"
-                android:textColor="#000000"
+                android:textColor="@color/colorHint"
                 android:textColorHint="@color/colorHint"
                 android:inputType="textPersonName"/>
 
@@ -62,14 +62,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/background_menu_two"
                 android:maxLines="1"
                 android:padding="6dp"
                 android:hint="Password"
-                android:textColor="#000000"
+                android:textColor="@color/colorHint"
                 android:textColorHint="@color/colorHint"
                 android:textSize="14dp"
-                android:drawableLeft="@drawable/ic_lock_red_400_24dp"
+                android:background="@drawable/background_login"
                 android:inputType="textPassword"/>
 
             <EditText
@@ -81,8 +80,8 @@
                 android:padding="6dp"
                 android:hint="Name"
                 android:textSize="14dp"
-                android:background="@drawable/background_menu_two"
-                android:textColor="#000000"
+                android:background="@drawable/background_login"
+                android:textColor="@color/colorHint"
                 android:textColorHint="@color/colorHint"
                 android:inputType="textPersonName"/>
 
@@ -96,8 +95,8 @@
                 android:padding="6dp"
                 android:hint="Email"
                 android:textSize="14dp"
-                android:background="@drawable/background_menu_two"
-                android:textColor="#000000"
+                android:background="@drawable/background_login"
+                android:textColor="@color/colorHint"
                 android:textColorHint="@color/colorHint"
                 android:inputType="textEmailAddress"/>
 
@@ -110,8 +109,8 @@
                 android:padding="6dp"
                 android:hint="Phone Number"
                 android:textSize="14dp"
-                android:background="@drawable/background_menu_two"
-                android:textColor="#000000"
+                android:background="@drawable/background_login"
+                android:textColor="@color/colorHint"
                 android:textColorHint="@color/colorHint"/>
 
             <Button
