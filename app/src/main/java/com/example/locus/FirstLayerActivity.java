@@ -38,13 +38,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUser;
-
-public class FirstLayerActivity extends AppCompatActivity
-    implements OnMapReadyCallback {
-
-    private static final String TAG = FirstLayerActivity.class.getSimpleName();
-    private GoogleMap mMap;
-    private CameraPosition mCameraPosition;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
@@ -57,6 +50,13 @@ import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUserPool;
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.handlers.GetDetailsHandler;
 
 import java.util.Map;
+
+public class FirstLayerActivity extends AppCompatActivity
+    implements OnMapReadyCallback {
+
+    private static final String TAG = FirstLayerActivity.class.getSimpleName();
+    private GoogleMap mMap;
+    private CameraPosition mCameraPosition;
 
     // The entry points to the Places API.
     private GeoDataClient mGeoDataClient;
@@ -100,7 +100,7 @@ import java.util.Map;
         // Retrieve the content view that renders the map.
         setContentView(R.layout.activity_first_layer);
 
-<<<<<<< HEAD
+
         // Construct a GeoDataClient.
         mGeoDataClient = Places.getGeoDataClient(this, null);
 
@@ -283,10 +283,10 @@ import java.util.Map;
                 mLastKnownLocation = null;
                 getLocationPermission();
             }
-        } catch (SecurityException e)  {
+        } catch (SecurityException e) {
             Log.e("Exception: %s", e.getMessage());
         }
-=======
+
         CognitoSettings cognitoSettings = new CognitoSettings(FirstLayerActivity.this);
         CognitoUserPool userPool = cognitoSettings.getUserPool();
         CognitoUser user = userPool.getCurrentUser();
@@ -299,16 +299,16 @@ import java.util.Map;
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
-                    case R.id.nav_x :
+                    case R.id.nav_x:
                         return true;
 
-                    case R.id.nav_y :
+                    case R.id.nav_y:
                         return true;
 
                     case R.id.nav_z:
                         return true;
 
-                    case R.id.nav_me :
+                    case R.id.nav_me:
                         Intent meIntent = new Intent(FirstLayerActivity.this, MeActivity.class);
                         FirstLayerActivity.this.startActivity(meIntent);
                         return true;
@@ -337,14 +337,5 @@ import java.util.Map;
         };
 
         user.getDetailsInBackground(handler);
->>>>>>> origin/master
     }
-    /*
-    bMapView.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-
-        }
-    });
-    */
 }
