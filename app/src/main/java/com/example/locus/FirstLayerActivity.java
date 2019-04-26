@@ -1,6 +1,7 @@
 package com.example.locus;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.content.DialogInterface;
@@ -31,6 +32,8 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.CameraPosition;
+import com.google.android.gms.maps.model.Circle;
+import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -68,7 +71,7 @@ public class FirstLayerActivity extends AppCompatActivity
     // A default location (Sydney, Australia) and default zoom to use when location permission is
     // not granted.
     private final LatLng mDefaultLocation = new LatLng(-33.8523341, 151.2106085);
-    private static final int DEFAULT_ZOOM = 15;
+    private static final int DEFAULT_ZOOM = 17;
     private static final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
     private boolean mLocationPermissionGranted;
 
@@ -80,12 +83,7 @@ public class FirstLayerActivity extends AppCompatActivity
     private static final String KEY_CAMERA_POSITION = "camera_position";
     private static final String KEY_LOCATION = "location";
 
-    // Used for selecting the current place.
-    private static final int M_MAX_ENTRIES = 5;
-    private String[] mLikelyPlaceNames;
-    private String[] mLikelyPlaceAddresses;
-    private String[] mLikelyPlaceAttributions;
-    private LatLng[] mLikelyPlaceLatLngs;
+
 
     private BottomNavigationView mMainNav;
     @Override
@@ -153,6 +151,8 @@ public class FirstLayerActivity extends AppCompatActivity
         addMapMarkers();
         // Use a custom info window adapter to handle multiple lines of text in the
         // info window contents.
+
+
         mMap.setInfoWindowAdapter(new GoogleMap.InfoWindowAdapter() {
 
             @Override
@@ -208,6 +208,14 @@ public class FirstLayerActivity extends AppCompatActivity
                             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
                                     new LatLng(mLastKnownLocation.getLatitude(),
                                             mLastKnownLocation.getLongitude()), DEFAULT_ZOOM));
+                            //Add circle to show range
+                            Circle circle = mMap.addCircle(new CircleOptions()
+                                    .center(new LatLng(mLastKnownLocation.getLatitude(),
+                                            mLastKnownLocation.getLongitude()))
+                                    .radius(100)
+                                    .strokeColor(Color.RED)
+                                    .fillColor(Color.GREEN));
+
                         } else {
                             Log.d(TAG, "Current location is null. Using defaults.");
                             Log.e(TAG, "Exception: %s", task.getException());
@@ -293,7 +301,7 @@ public class FirstLayerActivity extends AppCompatActivity
 
         final TextView textViewName = (TextView) findViewById(R.id.tvNameFirst);
         mMainNav = (BottomNavigationView) findViewById(R.id.main_nav);
-        mMainNav.getMenu().getItem(0).setChecked(true);
+        mMainNav.getMenu().getItem(2).setChecked(true);
 
         mMainNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
