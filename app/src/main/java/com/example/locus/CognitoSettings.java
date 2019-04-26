@@ -6,11 +6,12 @@ import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUserPool;
 import com.amazonaws.regions.Regions;
 
 public class CognitoSettings {
-    private String userPoolID = "us-east-1_ur6bokDS4";
-    private String clientID = "1kk0u963edapah0fd8q684su82";
-    private String clientSecret = "14mjrk37k2vv3lid6jgrvb2gcpgu077jqm3lmq31is5tu7hsk2s8";
+    private String userPoolID = "us-east-1_Sc2YimF5b";
+    private String clientID = "6dsthpf94odjigs0qpcs90gj0a";
+    private String clientSecret = "1bifvpq15g3i6fi0ah7tglv8vqffceo4fd28d9ls55qrkobl0aji";
     private Regions cognitoRegion = Regions.US_EAST_1;
     private Context context;
+
 
     public CognitoSettings(Context context){
         this.context = context;

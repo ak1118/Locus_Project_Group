@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/welcome_color"
+    tools:context=".MeActivity">
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/main_nav_me"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        app:itemBackground="@color/colorWhite"
+        app:itemIconTint="@drawable/nav_item_colors"
+        app:menu="@menu/nav_items"></android.support.design.widget.BottomNavigationView>
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_alignParentTop="true"
+        android:layout_height="fill_parent">
+
+        <ImageView
+            android:id="@+id/outside_imageview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_menu_four"
+            android:layout_alignTop="@id/inside_imageview"
+            android:layout_alignBottom="@id/inside_imageview"
+            android:layout_alignLeft="@id/inside_imageview"
+            android:layout_alignRight="@id/inside_imageview"
+            android:scaleType="fitXY" />
+
+        <ImageView
+            android:id="@+id/inside_imageview"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:padding="66dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="70dp"
+            android:layout_marginBottom="70dp"
+            android:background="@drawable/ic_person_outline_red_400_24dp" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="vertical"
+            android:background="@drawable/background_menu"
+            android:paddingTop="10dp"
+            android:paddingBottom="210dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+
+            <TextView
+                android:id="@+id/tvNameMe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/background_login"
+                android:maxLines="1"
+                android:padding="6dp"
+                android:text="Name"
+                android:textColor="@color/colorHint"
+                android:textSize="14dp"/>
+
+            <TextView
+                android:id="@+id/tvEmaiMe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:maxLines="1"
+                android:padding="6dp"
+                android:text="Email"
+                android:textSize="14dp"
+                android:background="@drawable/background_login"
+                android:textColor="@color/colorHint"
+                android:inputType="textEmailAddress"/>
+
+            <TextView
+                android:id="@+id/tvPhoneMe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:maxLines="1"
+                android:padding="6dp"
+                android:text="Phone Number"
+                android:textSize="14dp"
+                android:background="@drawable/background_login"
+                android:textColor="@color/colorHint"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp">
+
+                <TextView
+                    android:id="@+id/tvChangeMe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:background="@drawable/background_login_two"
+                    android:padding="5dp"
+                    android:text="Change Profile Information"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tvHelpMe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/background_login_two"
+                    android:padding="5dp"
+                    android:text="Need Help?"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

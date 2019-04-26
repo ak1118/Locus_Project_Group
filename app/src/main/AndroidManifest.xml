@@ -26,12 +26,18 @@
         <activity android:name=".RegistrationActivity" />
         <activity android:name=".FirstLayerActivity" />
         <activity android:name=".MainActivity">
+        <activity android:name=".MeActivity"></activity>
+        <activity android:name=".WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".VerificationActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".RegistrationActivity" />
+        <activity android:name=".FirstLayerActivity" />
 
         <service android:name="org.eclipse.paho.android.service.MqttService" />
 
