@@ -20,3 +20,59 @@ query ListTodos(
     nextToken
   }
 }
+query GetLocation($id: ID!) {
+  getLocation(id: $id) {
+    id
+    name
+    address
+    lat
+    lon
+    rating
+  }
+}
+query ListLocations(
+  $filter: TableLocationFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listLocations(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      name
+      address
+      lat
+      lon
+      rating
+    }
+    nextToken
+  }
+}
+query GetLocation2($id: ID!) {
+  getLocation2(id: $id) {
+    id
+    name
+    address
+    lat
+    lon
+    rating
+    deal
+  }
+}
+query ListLocation2S(
+  $filter: TableLocation2FilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listLocation2S(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      name
+      address
+      lat
+      lon
+      rating
+      deal
+    }
+    nextToken
+  }
+}

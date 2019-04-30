@@ -39,7 +39,8 @@ public class MeActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
                     case R.id.nav_x :
-
+                        Intent bIntent = new Intent(MeActivity.this, business.class);
+                        MeActivity.this.startActivity(bIntent);
                         return true;
 
                     case R.id.nav_y :

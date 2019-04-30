@@ -2,6 +2,7 @@ package com.example.locus;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.location.Geocoder;
 import android.os.Bundle;
 import android.view.View;
 import android.content.DialogInterface;
@@ -20,6 +21,15 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
+import com.amazonaws.amplify.generated.graphql.CreateLocationMutation;
+import com.amazonaws.amplify.generated.graphql.ListLocationsQuery;
+import com.amazonaws.amplify.generated.graphql.ListTodosQuery;
+import com.amazonaws.mobile.config.AWSConfiguration;
+import com.amazonaws.mobileconnectors.appsync.AWSAppSyncClient;
+import com.amazonaws.mobileconnectors.appsync.fetcher.AppSyncResponseFetchers;
+import com.apollographql.apollo.GraphQLCall;
+import com.apollographql.apollo.api.Response;
+import com.apollographql.apollo.exception.ApolloException;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.location.places.GeoDataClient;
@@ -40,6 +50,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
+
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUser;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -51,8 +62,16 @@ import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUser;
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUserDetails;
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUserPool;
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.handlers.GetDetailsHandler;
+import com.google.maps.android.SphericalUtil;
 
+import java.util.List;
+import java.util.Locale;
 import java.util.Map;
+
+import javax.annotation.Nonnull;
+
+import type.CreateLocationInput;
+
 
 public class FirstLayerActivity extends AppCompatActivity
     implements OnMapReadyCallback {
@@ -82,6 +101,9 @@ public class FirstLayerActivity extends AppCompatActivity
     // Keys for storing activity state.
     private static final String KEY_CAMERA_POSITION = "camera_position";
     private static final String KEY_LOCATION = "location";
+    private static final int min_range = 100;
+
+    private AWSAppSyncClient mAWSAppSyncClient;
 
 
 
@@ -98,6 +120,12 @@ public class FirstLayerActivity extends AppCompatActivity
         // Retrieve the content view that renders the map.
         setContentView(R.layout.activity_first_layer);
 
+        /*
+        mAWSAppSyncClient = AWSAppSyncClient.builder()
+                .context(getApplicationContext())
+                .awsConfiguration(new AWSConfiguration(getApplicationContext()))
+                .build();
+        */
 
         // Construct a GeoDataClient.
         mGeoDataClient = Places.getGeoDataClient(this, null);
@@ -113,6 +141,28 @@ public class FirstLayerActivity extends AppCompatActivity
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
     }
+
+
+    /*
+    public void runQuery(){
+        mAWSAppSyncClient.query(ListLocationsQuery.builder().build())
+                .responseFetcher(AppSyncResponseFetchers.CACHE_AND_NETWORK)
+                .enqueue(LocationsCallback);
+    }
+
+    private GraphQLCall.Callback<ListLocationsQuery.Data> LocationsCallback = new GraphQLCall.Callback<ListLocationsQuery.Data>() {
+        @Override
+        public void onResponse(@Nonnull Response<ListLocationsQuery.Data> response) {
+            Log.i("Results", response.data().listLocations().items().toString());
+        }
+
+        @Override
+        public void onFailure(@Nonnull ApolloException e) {
+            Log.e("ERROR", e.toString());
+        }
+    };
+    */
+
     /**
      * Saves the state of the map when the activity is paused.
      */
@@ -127,16 +177,24 @@ public class FirstLayerActivity extends AppCompatActivity
 
 
     protected void addMapMarkers(){
+
         //Mock Business Locations
-        String[] businesses = new String[]{"John's Pizzeria", "Dry Cleaners", "Supermarket"};
-        LatLng[] businessLatLngs = new LatLng[3];
+        String[] businesses = new String[]{"John's Pizzeria", "Dry Cleaners", "Supermarket", "Local Deli"};
+        String[] deals = new String[]{"99 cent Pizza", "10% off for students", "Free Samples Today", "Buy one get one free all week"};
+        LatLng[] businessLatLngs = new LatLng[4];
         businessLatLngs[0] = new LatLng(40.692769, -73.986277);
         businessLatLngs[1] = new LatLng(40.692771, -73.987275);
         businessLatLngs[2] = new LatLng(40.693767, -73.985278);
+        businessLatLngs[3] = new LatLng(40.694267, -73.985378);
 
         for(int i = 0; i < businesses.length; i++){
-            mMap.addMarker(new MarkerOptions().position(businessLatLngs[i])
-                    .title(businesses[i]));
+            if( SphericalUtil.computeDistanceBetween(new LatLng(mLastKnownLocation.getLatitude(),
+                    mLastKnownLocation.getLongitude()), businessLatLngs[i]) < min_range ){
+                mMap.addMarker(new MarkerOptions().position(businessLatLngs[i])
+                        .title(businesses[i])
+                        .snippet(deals[i]));
+            }
+
         }
 
     }
@@ -148,7 +206,7 @@ public class FirstLayerActivity extends AppCompatActivity
     public void onMapReady(GoogleMap map) {
         mMap = map;
 
-        addMapMarkers();
+
         // Use a custom info window adapter to handle multiple lines of text in the
         // info window contents.
 
@@ -208,11 +266,13 @@ public class FirstLayerActivity extends AppCompatActivity
                             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
                                     new LatLng(mLastKnownLocation.getLatitude(),
                                             mLastKnownLocation.getLongitude()), DEFAULT_ZOOM));
+
+                            addMapMarkers();
                             //Add circle to show range
                             Circle circle = mMap.addCircle(new CircleOptions()
                                     .center(new LatLng(mLastKnownLocation.getLatitude(),
                                             mLastKnownLocation.getLongitude()))
-                                    .radius(100)
+                                    .radius(min_range)
                                     .strokeColor(Color.RED)
                                     .fillColor(Color.GREEN));
 
@@ -308,6 +368,8 @@ public class FirstLayerActivity extends AppCompatActivity
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
                     case R.id.nav_x:
+                        Intent bIntent = new Intent(FirstLayerActivity.this, business.class);
+                        FirstLayerActivity.this.startActivity(bIntent);
                         return true;
 
                     case R.id.nav_y:

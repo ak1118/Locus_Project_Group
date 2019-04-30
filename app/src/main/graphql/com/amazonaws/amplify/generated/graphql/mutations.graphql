@@ -20,3 +20,66 @@ mutation DeleteTodo($input: DeleteTodoInput!) {
     description
   }
 }
+mutation CreateLocation($input: CreateLocationInput!) {
+  createLocation(input: $input) {
+    id
+    name
+    address
+    lat
+    lon
+    rating
+  }
+}
+mutation UpdateLocation($input: UpdateLocationInput!) {
+  updateLocation(input: $input) {
+    id
+    name
+    address
+    lat
+    lon
+    rating
+  }
+}
+mutation DeleteLocation($input: DeleteLocationInput!) {
+  deleteLocation(input: $input) {
+    id
+    name
+    address
+    lat
+    lon
+    rating
+  }
+}
+mutation CreateLocation2($input: CreateLocation2Input!) {
+  createLocation2(input: $input) {
+    id
+    name
+    address
+    lat
+    lon
+    rating
+    deal
+  }
+}
+mutation UpdateLocation2($input: UpdateLocation2Input!) {
+  updateLocation2(input: $input) {
+    id
+    name
+    address
+    lat
+    lon
+    rating
+    deal
+  }
+}
+mutation DeleteLocation2($input: DeleteLocation2Input!) {
+  deleteLocation2(input: $input) {
+    id
+    name
+    address
+    lat
+    lon
+    rating
+    deal
+  }
+}

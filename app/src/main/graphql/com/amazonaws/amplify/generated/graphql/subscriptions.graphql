@@ -20,3 +20,138 @@ subscription OnDeleteTodo {
     description
   }
 }
+subscription OnCreateLocation(
+  $id: ID
+  $name: String
+  $address: String
+  $lat: Float
+  $lon: Float
+) {
+  onCreateLocation(
+    id: $id
+    name: $name
+    address: $address
+    lat: $lat
+    lon: $lon
+  ) {
+    id
+    name
+    address
+    lat
+    lon
+    rating
+  }
+}
+subscription OnUpdateLocation(
+  $id: ID
+  $name: String
+  $address: String
+  $lat: Float
+  $lon: Float
+) {
+  onUpdateLocation(
+    id: $id
+    name: $name
+    address: $address
+    lat: $lat
+    lon: $lon
+  ) {
+    id
+    name
+    address
+    lat
+    lon
+    rating
+  }
+}
+subscription OnDeleteLocation(
+  $id: ID
+  $name: String
+  $address: String
+  $lat: Float
+  $lon: Float
+) {
+  onDeleteLocation(
+    id: $id
+    name: $name
+    address: $address
+    lat: $lat
+    lon: $lon
+  ) {
+    id
+    name
+    address
+    lat
+    lon
+    rating
+  }
+}
+subscription OnCreateLocation2(
+  $id: ID
+  $name: String
+  $address: String
+  $lat: Float
+  $lon: Float
+) {
+  onCreateLocation2(
+    id: $id
+    name: $name
+    address: $address
+    lat: $lat
+    lon: $lon
+  ) {
+    id
+    name
+    address
+    lat
+    lon
+    rating
+    deal
+  }
+}
+subscription OnUpdateLocation2(
+  $id: ID
+  $name: String
+  $address: String
+  $lat: Float
+  $lon: Float
+) {
+  onUpdateLocation2(
+    id: $id
+    name: $name
+    address: $address
+    lat: $lat
+    lon: $lon
+  ) {
+    id
+    name
+    address
+    lat
+    lon
+    rating
+    deal
+  }
+}
+subscription OnDeleteLocation2(
+  $id: ID
+  $name: String
+  $address: String
+  $lat: Float
+  $lon: Float
+) {
+  onDeleteLocation2(
+    id: $id
+    name: $name
+    address: $address
+    lat: $lat
+    lon: $lon
+  ) {
+    id
+    name
+    address
+    lat
+    lon
+    rating
+    deal
+  }
+}

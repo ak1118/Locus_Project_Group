@@ -17,7 +17,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.NoActionBar">
-        <uses-library android:name="org.apache.http.legacy" android:required="false" />
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
@@ -25,8 +28,8 @@
         <activity android:name=".VerificationActivity" />
         <activity android:name=".RegistrationActivity" />
         <activity android:name=".FirstLayerActivity" />
-        <activity android:name=".MainActivity"/>
-        <activity android:name=".MeActivity"></activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".MeActivity" />
         <activity android:name=".WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -41,6 +44,9 @@
 
         <service android:name="org.eclipse.paho.android.service.MqttService" />
 
+        <activity
+            android:name=".business"
+            android:label="@string/title_activity_business"></activity>
     </application>
 
 </manifest>
