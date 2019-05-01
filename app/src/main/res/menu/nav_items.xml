@@ -4,18 +4,18 @@
 
     <item
         android:id="@+id/nav_x"
-        android:icon="@drawable/ic_person_outline_red_400_24dp"
+        android:icon="@drawable/baseline_add_location"
         android:title="@string/nav_x" />
     <item
-        android:id="@+id/nav_y"
-        android:icon="@drawable/ic_lock_red_400_24dp"
-        android:title="@string/nav_y" />
-    <item
         android:id="@+id/nav_z"
-        android:icon="@drawable/locus_logo"
+        android:icon="@drawable/baseline_map"
         android:title="@string/nav_z" />
     <item
         android:id="@+id/nav_me"
-        android:icon="@drawable/ic_google_plus"
+        android:icon="@drawable/round_account_circle"
         android:title="@string/nav_Me" />
+    <item
+        android:id="@+id/nav_y"
+        android:icon="@drawable/baseline_view_list"
+        android:title="@string/nav_y" />
 </menu>

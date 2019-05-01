@@ -57,7 +57,7 @@
             android:orientation="vertical"
             android:background="@drawable/background_menu"
             android:paddingTop="10dp"
-            android:paddingBottom="210dp"
+            android:paddingBottom="60dp"
             android:paddingLeft="16dp"
             android:paddingRight="16dp">
 
@@ -126,6 +126,18 @@
                     android:text="Need Help?"
                     android:textColor="#FFFFFF"
                     android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/bRegister"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_login_two"
+                    android:clickable="true"
+                    android:layout_marginTop="45dp"
+                    android:padding="16dp"
+                    android:text="Saved Deals"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"/>
 
             </RelativeLayout>
 
