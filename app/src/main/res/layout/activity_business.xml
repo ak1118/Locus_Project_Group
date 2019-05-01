@@ -7,6 +7,23 @@
     android:background="@drawable/welcome_color"
     tools:context=".FirstLayerActivity">
 
+    <LinearLayout
+        android:id="@+id/layoutLoginOne"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/welcome_color">
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="70dp"
+            android:background="@drawable/locus_logo"
+            android:padding="16dp" />
+
+    </LinearLayout>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
