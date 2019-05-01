@@ -13,11 +13,8 @@
         android:id="@+id/layoutVerificationOne"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/welcome_color"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="5dp">
+        android:background="@drawable/welcome_color">
 
         <ImageView
             android:layout_width="200dp"
