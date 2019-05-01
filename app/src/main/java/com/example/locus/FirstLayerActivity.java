@@ -64,6 +64,7 @@ import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUserPool;
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.handlers.GetDetailsHandler;
 import com.google.maps.android.SphericalUtil;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -105,9 +106,18 @@ public class FirstLayerActivity extends AppCompatActivity
 
     private AWSAppSyncClient mAWSAppSyncClient;
 
-
-
     private BottomNavigationView mMainNav;
+    //Mock Business Locations
+    private List<String> businesses = new ArrayList<String>();
+    private List<String> deals = new ArrayList<String>();
+    private List<LatLng> businessLatLngs = new ArrayList<LatLng>();
+    /*
+    private  String[] businesses = new String[]{"John's Pizzeria", "Dry Cleaners", "Supermarket", "Local Deli", ""};
+    private String[] deals = new String[]{"99 cent Pizza", "10% off for students", "Free Samples Today", "Buy one get one free all week",
+    ""};
+    private LatLng[] businessLatLngs = new LatLng[5];
+    */
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -117,6 +127,27 @@ public class FirstLayerActivity extends AppCompatActivity
             mCameraPosition = savedInstanceState.getParcelable(KEY_CAMERA_POSITION);
         }
 
+        businesses.add("John's Pizzeria");
+        businesses.add("Dry Cleaners");
+        businesses.add("Supermarket");
+        businesses.add("Local Deli");
+
+        deals.add("99 cent Pizza");
+        deals.add("10% off with student ID");
+        deals.add("Free Samples Today");
+        deals.add("Buy one get one free sandwiches all week");
+
+        businessLatLngs.add(new LatLng(40.692769, -73.986277));
+        businessLatLngs.add(new LatLng(40.692771, -73.987275));
+        businessLatLngs.add(new LatLng(40.693767, -73.985278));
+        businessLatLngs.add(new LatLng(40.694267, -73.985378));
+
+        Intent intent = getIntent();
+        if(intent.getStringExtra("name")!= null && intent.getStringExtra("name").length() > 0) {
+            businesses.add(intent.getStringExtra("name"));
+            deals.add(intent.getStringExtra("deal"));
+            businessLatLngs.add(new LatLng(40.693267, -73.985678));
+        }
         // Retrieve the content view that renders the map.
         setContentView(R.layout.activity_first_layer);
 
@@ -178,21 +209,15 @@ public class FirstLayerActivity extends AppCompatActivity
 
     protected void addMapMarkers(){
 
-        //Mock Business Locations
-        String[] businesses = new String[]{"John's Pizzeria", "Dry Cleaners", "Supermarket", "Local Deli"};
-        String[] deals = new String[]{"99 cent Pizza", "10% off for students", "Free Samples Today", "Buy one get one free all week"};
-        LatLng[] businessLatLngs = new LatLng[4];
-        businessLatLngs[0] = new LatLng(40.692769, -73.986277);
-        businessLatLngs[1] = new LatLng(40.692771, -73.987275);
-        businessLatLngs[2] = new LatLng(40.693767, -73.985278);
-        businessLatLngs[3] = new LatLng(40.694267, -73.985378);
 
-        for(int i = 0; i < businesses.length; i++){
+
+        for(int i = 0; i < businesses.size(); i++){
             if( SphericalUtil.computeDistanceBetween(new LatLng(mLastKnownLocation.getLatitude(),
-                    mLastKnownLocation.getLongitude()), businessLatLngs[i]) < min_range ){
-                mMap.addMarker(new MarkerOptions().position(businessLatLngs[i])
-                        .title(businesses[i])
-                        .snippet(deals[i]));
+                    mLastKnownLocation.getLongitude()), businessLatLngs.get(i)) < min_range ){
+                mMap.addMarker(new MarkerOptions().position(businessLatLngs.get(i))
+                        .title(businesses.get(i))
+                        .snippet(deals.get(i)));
+
             }
 
         }

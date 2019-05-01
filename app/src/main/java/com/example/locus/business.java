@@ -39,7 +39,14 @@ public class business extends Activity {
         buttonAddBusiness.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                runMutation();
+                Intent mapIntent = new Intent (business.this, FirstLayerActivity.class);
+                String name = ((EditText) findViewById(R.id.etBusinessName)).getText().toString();
+                String deal = ((EditText) findViewById(R.id.etDeal)).getText().toString();
+
+                mapIntent.putExtra("name", name);
+                mapIntent.putExtra("deal", deal);
+                business.this.startActivity(mapIntent);
+                //runMutation();
             }
         });
 
