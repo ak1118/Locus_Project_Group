@@ -7,72 +7,81 @@
     android:background="@drawable/welcome_color"
     tools:context=".FirstLayerActivity">
 
-    <LinearLayout
-        android:id="@+id/layoutLoginTwo"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:background="@drawable/background_menu"
-        android:orientation="vertical"
-        android:paddingLeft="15dp"
-        android:paddingTop="25dp"
-        android:paddingRight="15dp"
-        android:paddingBottom="10dp"
-        app:layout_constraintBottom_toTopOf="@id/bottomAlign"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
+        android:layout_height="match_parent"
+        android:paddingBottom="12dp"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-        <EditText
-            android:id="@+id/etBusinessName"
+        <LinearLayout
+            android:id="@+id/layoutLoginTwo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/background_login"
-            android:hint="Business Name"
-            android:padding="10dp"
-            android:inputType="text"
-            android:maxLines="1"
-            android:textSize="14sp"
-            android:textColor="@color/colorHint"
-            android:textColorHint="@color/colorHint"/>
-        <EditText
-            android:id="@+id/etAddress"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/background_login"
-            android:hint="Address"
-            android:padding="10dp"
-            android:inputType="text"
-            android:maxLines="1"
-            android:textSize="14sp"
-            android:textColor="@color/colorHint"
-            android:textColorHint="@color/colorHint"/>
+            android:layout_gravity="bottom"
+            android:background="@drawable/background_menu"
+            android:orientation="vertical"
+            android:paddingLeft="15dp"
+            android:paddingTop="25dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="100dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
 
-        <EditText
-            android:id="@+id/etDeal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:hint="Add deals here"
-            android:ems="10"
-            android:inputType="textMultiLine"
-            android:textSize="14sp"
-            android:textColor="@color/colorHint"
-            android:textColorHint="@color/colorHint"/>
+            <EditText
+                android:id="@+id/etBusinessName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_login"
+                android:hint="Business Name"
+                android:padding="10dp"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textSize="14sp"
+                android:textColor="@color/colorHint"
+                android:textColorHint="@color/colorHint"/>
+            <EditText
+                android:id="@+id/etAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/background_login"
+                android:hint="Address"
+                android:padding="10dp"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textSize="14sp"
+                android:textColor="@color/colorHint"
+                android:textColorHint="@color/colorHint"/>
 
-        <Button
-            android:id="@+id/bAddBusiness"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/background_login_two"
-            android:clickable="true"
-            android:padding="16dp"
-            android:text="Add Business"
-            android:textColor="#FFFFFF"
-            android:textSize="15sp" />
+            <EditText
+                android:id="@+id/etDeal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:hint="Add deals here"
+                android:ems="10"
+                android:inputType="textMultiLine"
+                android:textSize="14sp"
+                android:textColor="@color/colorHint"
+                android:textColorHint="@color/colorHint"/>
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/bAddBusiness"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/background_login_two"
+                android:clickable="true"
+                android:padding="16dp"
+                android:text="Add Business"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/main_nav"
         android:layout_width="match_parent"
@@ -84,13 +93,5 @@
         app:menu="@menu/nav_items"></android.support.design.widget.BottomNavigationView>
 
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:background="@drawable/background_menu"
-        android:paddingBottom="12dp">
-
-    </ScrollView>
 
 </RelativeLayout>

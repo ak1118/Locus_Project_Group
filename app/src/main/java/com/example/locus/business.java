@@ -23,7 +23,6 @@ import com.apollographql.apollo.api.Response;
 import com.apollographql.apollo.exception.ApolloException;
 
 import javax.annotation.Nonnull;
-
 import type.CreateLocation2Input;
 import type.CreateLocationInput;
 
@@ -44,7 +43,6 @@ public class business extends Activity {
             }
         });
 
-
         mMainNav = (BottomNavigationView) findViewById(R.id.main_nav);
         mMainNav.getMenu().getItem(0).setChecked(true);
 
@@ -53,7 +51,6 @@ public class business extends Activity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
                     case R.id.nav_x :
-
                         return true;
 
                     case R.id.nav_y :
@@ -76,7 +73,6 @@ public class business extends Activity {
         });
 
     }
-
 
     public void runMutation(){
         String name = ((EditText) findViewById(R.id.etBusinessName)).getText().toString();
@@ -108,7 +104,5 @@ public class business extends Activity {
             Log.e("Error", e.toString());
         }
     };
-
-
 
 }
