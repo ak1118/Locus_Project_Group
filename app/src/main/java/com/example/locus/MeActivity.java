@@ -32,7 +32,7 @@ public class MeActivity extends AppCompatActivity {
         final TextView textViewPhoneMe = (TextView) findViewById(R.id.tvPhoneMe);
 
         mMainNav = (BottomNavigationView) findViewById(R.id.main_nav_me);
-        mMainNav.getMenu().getItem(2).setChecked(true);
+        mMainNav.getMenu().getItem(3).setChecked(true);
 
         mMainNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
