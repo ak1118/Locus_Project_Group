@@ -274,7 +274,7 @@ public class FirstLayerActivity extends AppCompatActivity
                                             mLastKnownLocation.getLongitude()))
                                     .radius(min_range)
                                     .strokeColor(Color.RED)
-                                    .fillColor(Color.GREEN));
+                                    .fillColor(Color.TRANSPARENT));
 
                         } else {
                             Log.d(TAG, "Current location is null. Using defaults.");
@@ -361,7 +361,7 @@ public class FirstLayerActivity extends AppCompatActivity
 
         final TextView textViewName = (TextView) findViewById(R.id.tvNameFirst);
         mMainNav = (BottomNavigationView) findViewById(R.id.main_nav);
-        mMainNav.getMenu().getItem(2).setChecked(true);
+        mMainNav.getMenu().getItem(1).setChecked(true);
 
         mMainNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -396,7 +396,7 @@ public class FirstLayerActivity extends AppCompatActivity
                 String name = mDetails.get("given_name").toString();
                 String eMail = mDetails.get("email").toString();
                 String phone_number = mDetails.get("phone_number").toString();
-                textViewName.setText("Name:  " + name + "   " + "Email: " + eMail + "   " + "Phone Number:  " + phone_number);
+                //textViewName.setText("Name:  " + name + "   " + "Email: " + eMail + "   " + "Phone Number:  " + phone_number);
                 // Successfully retrieved user details
             }
 

@@ -28,6 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/background_menu_four"
+            android:backgroundTint="@color/colorTransparent"
             android:layout_alignTop="@id/inside_imageview"
             android:layout_alignBottom="@id/inside_imageview"
             android:layout_alignLeft="@id/inside_imageview"
@@ -36,8 +37,8 @@
 
         <ImageView
             android:id="@+id/inside_imageview"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
             android:padding="66dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="70dp"
@@ -48,7 +49,10 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:paddingRight="5dp"
+        android:paddingLeft="5dp"
+        android:paddingBottom="30dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -57,7 +61,7 @@
             android:orientation="vertical"
             android:background="@drawable/background_menu"
             android:paddingTop="10dp"
-            android:paddingBottom="60dp"
+            android:paddingBottom="30dp"
             android:paddingLeft="16dp"
             android:paddingRight="16dp">
 

@@ -55,7 +55,7 @@
             android:paddingRight="41dp"
             android:layout_marginTop="10dp"
             android:layout_gravity="center"
-            android:background="@drawable/background_login_two"
+            android:background="@drawable/background_login_three"
             android:textColor="#FFFFFF"
             android:textSize="15sp"
             android:text="Join"/>
