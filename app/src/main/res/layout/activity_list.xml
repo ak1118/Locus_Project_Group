@@ -56,7 +56,7 @@
                 android:layout_alignParentLeft="true"
                 android:background="@drawable/background_login_two"
                 android:padding="5dp"
-                android:text="Business Title"
+                android:text="John's Pizzeria"
                 android:textColor="#FFFFFF"
                 android:textSize="14sp" />
 
@@ -64,25 +64,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/background_login"
                 android:maxLines="1"
                 android:padding="5dp"
-                android:layout_marginBottom="10dp"
-                android:text="Rating: XX"
-                android:textSize="12dp"
-                android:background="@drawable/background_login"
-                android:textColor="@color/colorHint"/>
+                android:text="Rating: 4"
+                android:textColor="@color/colorHint"
+                android:textSize="12dp" />
 
             <TextView
                 android:id="@+id/tvBusinessInfoOne"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:background="@color/colorWhite"
                 android:maxLines="5"
                 android:padding="10dp"
-                android:layout_marginBottom="20dp"
-                android:text="Deal: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-                android:textSize="12dp"
-                android:background="@color/colorWhite"
-                android:textColor="@color/colorHint"/>
+                android:text="Deal: 99 cent Pizza"
+                android:textColor="@color/colorHint"
+                android:textSize="12dp" />
 
             <TextView
                 android:id="@+id/tvBusinessTitleTwo"
@@ -91,7 +91,7 @@
                 android:layout_alignParentLeft="true"
                 android:background="@drawable/background_login_two"
                 android:padding="5dp"
-                android:text="Business Title"
+                android:text="Supermarket"
                 android:textColor="#FFFFFF"
                 android:textSize="14sp" />
 
@@ -99,24 +99,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/background_login"
                 android:maxLines="1"
                 android:padding="5dp"
-                android:layout_marginBottom="10dp"
-                android:text="Rating: XX"
-                android:textSize="12dp"
-                android:background="@drawable/background_login"
-                android:textColor="@color/colorHint"/>
+                android:text="Rating: 3"
+                android:textColor="@color/colorHint"
+                android:textSize="12dp" />
+
             <TextView
                 android:id="@+id/tvBusinessInfoTwo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:background="@color/colorWhite"
                 android:maxLines="5"
                 android:padding="10dp"
-                android:layout_marginBottom="20dp"
-                android:text="Deal: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-                android:textSize="12dp"
-                android:background="@color/colorWhite"
-                android:textColor="@color/colorHint"/>
+                android:text="Deal: Free Samples Today"
+                android:textColor="@color/colorHint"
+                android:textSize="12dp" />
 
             <TextView
                 android:id="@+id/tvBusinessTitleThree"
@@ -125,7 +126,7 @@
                 android:layout_alignParentLeft="true"
                 android:background="@drawable/background_login_two"
                 android:padding="5dp"
-                android:text="Business Title"
+                android:text="Local Deli"
                 android:textColor="#FFFFFF"
                 android:textSize="14sp" />
 
@@ -133,26 +134,26 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/background_login"
                 android:maxLines="1"
                 android:padding="5dp"
-                android:layout_marginBottom="10dp"
-                android:text="Rating: XX"
-                android:textSize="12dp"
-                android:background="@drawable/background_login"
-                android:textColor="@color/colorHint"/>
+                android:text="Rating: 5"
+                android:textColor="@color/colorHint"
+                android:textSize="12dp" />
 
 
             <TextView
                 android:id="@+id/tvBusinessInfoThree"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:background="@color/colorWhite"
                 android:maxLines="5"
                 android:padding="10dp"
-                android:layout_marginBottom="20dp"
-                android:text="Deal: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-                android:textSize="12dp"
-                android:background="@color/colorWhite"
-                android:textColor="@color/colorHint"/>
+                android:text="Deal: Buy one get one free sandwiches all week"
+                android:textColor="@color/colorHint"
+                android:textSize="12dp" />
 
 
 
