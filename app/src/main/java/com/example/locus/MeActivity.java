@@ -32,7 +32,7 @@ public class MeActivity extends AppCompatActivity {
         final TextView textViewPhoneMe = (TextView) findViewById(R.id.tvPhoneMe);
 
         mMainNav = (BottomNavigationView) findViewById(R.id.main_nav_me);
-        mMainNav.getMenu().getItem(2).setChecked(true);
+        mMainNav.getMenu().getItem(3).setChecked(true);
 
         mMainNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -43,14 +43,14 @@ public class MeActivity extends AppCompatActivity {
                         MeActivity.this.startActivity(bIntent);
                         return true;
 
-                    case R.id.nav_y :
-                        return true;
-
-
                     case R.id.nav_z:
                         Intent zIntent = new Intent(MeActivity.this, FirstLayerActivity.class);
                         MeActivity.this.startActivity(zIntent);
                         return true;
+
+                    case R.id.nav_y :
+                        Intent yIntent = new Intent(MeActivity.this, ListActivity.class);
+                        MeActivity.this.startActivity(yIntent);
 
                     case R.id.nav_me :
                         return true;

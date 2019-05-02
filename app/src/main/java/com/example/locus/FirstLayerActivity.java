@@ -398,6 +398,8 @@ public class FirstLayerActivity extends AppCompatActivity
                         return true;
 
                     case R.id.nav_y:
+                        Intent yIntent = new Intent(FirstLayerActivity.this, ListActivity.class);
+                        FirstLayerActivity.this.startActivity(yIntent);
                         return true;
 
                     case R.id.nav_z:

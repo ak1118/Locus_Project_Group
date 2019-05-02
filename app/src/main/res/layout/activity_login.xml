@@ -114,7 +114,6 @@
                 android:paddingLeft="10dp"
                 android:text="Need Help?"
                 android:textColor="@color/colorHint"/>
-                android:textSize="14sp" />
 
         </RelativeLayout>
     </LinearLayout>

@@ -60,10 +60,6 @@ public class business extends Activity {
                     case R.id.nav_x :
                         return true;
 
-                    case R.id.nav_y :
-                        return true;
-
-
                     case R.id.nav_z:
                         Intent zIntent = new Intent(business.this, FirstLayerActivity.class);
                         business.this.startActivity(zIntent);
@@ -72,6 +68,11 @@ public class business extends Activity {
                     case R.id.nav_me :
                         Intent meIntent = new Intent(business.this, MeActivity.class);
                         business.this.startActivity(meIntent);
+                        return true;
+
+                    case R.id.nav_y :
+                        Intent yIntent = new Intent(business.this, ListActivity.class);
+                        business.this.startActivity(yIntent);
                         return true;
 
                 }

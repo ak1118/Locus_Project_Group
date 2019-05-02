@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/welcome_color"
+    tools:context=".ListActivity">
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/main_nav_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        app:itemBackground="@color/colorWhite"
+        app:itemIconTint="@drawable/nav_item_colors"
+        app:menu="@menu/nav_items"></android.support.design.widget.BottomNavigationView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingRight="5dp"
+        android:paddingLeft="5dp"
+        android:paddingBottom="30dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="top"
+            android:orientation="vertical"
+            android:background="@drawable/background_menu"
+            android:paddingTop="10dp"
+            android:paddingBottom="15dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <TextView
+                android:id="@+id/tvList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:background="@color/colorTransparent"
+                android:textColor="@color/colorHint"
+                android:textSize="16sp"
+                android:text="List of Businesses"/>
+
+
+            <TextView
+                android:id="@+id/tvBusinessTitleOne"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/background_login_two"
+                android:padding="5dp"
+                android:text="Business Title"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:maxLines="1"
+                android:padding="5dp"
+                android:layout_marginBottom="10dp"
+                android:text="Rating: XX"
+                android:textSize="12dp"
+                android:background="@drawable/background_login"
+                android:textColor="@color/colorHint"/>
+
+            <TextView
+                android:id="@+id/tvBusinessInfoOne"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="5"
+                android:padding="10dp"
+                android:layout_marginBottom="20dp"
+                android:text="Deal: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+                android:textSize="12dp"
+                android:background="@color/colorWhite"
+                android:textColor="@color/colorHint"/>
+
+            <TextView
+                android:id="@+id/tvBusinessTitleTwo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/background_login_two"
+                android:padding="5dp"
+                android:text="Business Title"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:maxLines="1"
+                android:padding="5dp"
+                android:layout_marginBottom="10dp"
+                android:text="Rating: XX"
+                android:textSize="12dp"
+                android:background="@drawable/background_login"
+                android:textColor="@color/colorHint"/>
+            <TextView
+                android:id="@+id/tvBusinessInfoTwo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="5"
+                android:padding="10dp"
+                android:layout_marginBottom="20dp"
+                android:text="Deal: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+                android:textSize="12dp"
+                android:background="@color/colorWhite"
+                android:textColor="@color/colorHint"/>
+
+            <TextView
+                android:id="@+id/tvBusinessTitleThree"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/background_login_two"
+                android:padding="5dp"
+                android:text="Business Title"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:maxLines="1"
+                android:padding="5dp"
+                android:layout_marginBottom="10dp"
+                android:text="Rating: XX"
+                android:textSize="12dp"
+                android:background="@drawable/background_login"
+                android:textColor="@color/colorHint"/>
+
+
+            <TextView
+                android:id="@+id/tvBusinessInfoThree"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="5"
+                android:padding="10dp"
+                android:layout_marginBottom="20dp"
+                android:text="Deal: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+                android:textSize="12dp"
+                android:background="@color/colorWhite"
+                android:textColor="@color/colorHint"/>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

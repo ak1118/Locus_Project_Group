@@ -10,12 +10,15 @@
         android:id="@+id/nav_z"
         android:icon="@drawable/baseline_map"
         android:title="@string/nav_z" />
-    <item
-        android:id="@+id/nav_me"
-        android:icon="@drawable/round_account_circle"
-        android:title="@string/nav_Me" />
+
     <item
         android:id="@+id/nav_y"
         android:icon="@drawable/baseline_view_list"
         android:title="@string/nav_y" />
+
+    <item
+        android:id="@+id/nav_me"
+        android:icon="@drawable/round_account_circle"
+        android:title="@string/nav_Me" />
+
 </menu>
