@@ -6,12 +6,16 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUser;
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUserDetails;
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUserPool;
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.handlers.GetDetailsHandler;
+
+import org.w3c.dom.Text;
 
 import java.util.Map;
 
@@ -25,8 +29,9 @@ public class MeActivity extends AppCompatActivity {
 
         CognitoSettings cognitoSettings = new CognitoSettings(MeActivity.this);
         CognitoUserPool userPool = cognitoSettings.getUserPool();
-        CognitoUser user = userPool.getCurrentUser();
+        final CognitoUser user = userPool.getCurrentUser();
 
+        final TextView textViewSignOut = (TextView) findViewById(R.id.tvSignOut);
         final TextView textViewNameMe = (TextView) findViewById(R.id.tvNameMe);
         final TextView textViewEmailMe = (TextView) findViewById(R.id.tvEmaiMe);
         final TextView textViewPhoneMe = (TextView) findViewById(R.id.tvPhoneMe);
@@ -85,5 +90,13 @@ public class MeActivity extends AppCompatActivity {
 
         user.getDetailsInBackground(handler);
 
+        textViewSignOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                user.signOut();
+                Intent signOutIntent = new Intent(MeActivity.this, WelcomeActivity.class);
+                MeActivity.this.startActivity(signOutIntent);
+            }
+        });
     }
 }
