@@ -26,6 +26,7 @@
         android:paddingBottom="30dp">
 
         <LinearLayout
+            android:id="@+id/List"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="top"

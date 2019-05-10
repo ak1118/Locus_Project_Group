@@ -111,12 +111,7 @@ public class FirstLayerActivity extends AppCompatActivity
     private List<String> businesses = new ArrayList<String>();
     private List<String> deals = new ArrayList<String>();
     private List<LatLng> businessLatLngs = new ArrayList<LatLng>();
-    /*
-    private  String[] businesses = new String[]{"John's Pizzeria", "Dry Cleaners", "Supermarket", "Local Deli", ""};
-    private String[] deals = new String[]{"99 cent Pizza", "10% off for students", "Free Samples Today", "Buy one get one free all week",
-    ""};
-    private LatLng[] businessLatLngs = new LatLng[5];
-    */
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -399,6 +394,10 @@ public class FirstLayerActivity extends AppCompatActivity
 
                     case R.id.nav_y:
                         Intent yIntent = new Intent(FirstLayerActivity.this, ListActivity.class);
+                        if(businesses.size() > 4) {
+                            yIntent.putExtra("name", businesses.get(businesses.size() - 1));
+                            yIntent.putExtra("deal", deals.get(deals.size() - 1));
+                        }
                         FirstLayerActivity.this.startActivity(yIntent);
                         return true;
 
